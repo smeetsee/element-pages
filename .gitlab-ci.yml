@@ -2,9 +2,9 @@ pages:
   image: alpine:latest
   stage: deploy
   script:
-    - wget https://github.com/vector-im/element-web/releases/download/v1.7.9/riot-v1.7.9.tar.gz
-    - tar zvfx riot-v1.7.9.tar.gz
-    - mv riot-v1.7.9 public
+    - wget https://github.com/vector-im/element-web/releases/download/v1.7.13/riot-v1.7.13.tar.gz
+    - tar zvfx riot-v1.7.13.tar.gz
+    - mv riot-v1.7.13 public
     - cp config.json public
   artifacts:
     paths:
