@@ -2,9 +2,9 @@ pages:
   image: alpine:latest
   stage: deploy
   script:
-    - wget https://github.com/vector-im/element-web/releases/download/v1.7.23/element-v1.7.23.tar.gz
-    - tar zvfx element-v1.7.23.tar.gz
-    - mv element-v1.7.23 public
+    - wget https://github.com/vector-im/element-web/releases/download/v1.7.24/element-v1.7.24.tar.gz
+    - tar zvfx element-v1.7.24.tar.gz
+    - mv element-v1.7.24 public
     - cp config.json public
   artifacts:
     paths:
