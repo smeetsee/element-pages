@@ -47,7 +47,7 @@
     },
     "settingDefaults": {
         "breadcrumbs": true,
-        UIFeature.registration: false
+        "UIFeature.registration": false
     },
     "jitsi": {
         "preferredDomain": "meet.jit.si"
