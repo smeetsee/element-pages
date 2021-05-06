@@ -46,7 +46,8 @@
         "https://matrix.smeets.re": true
     },
     "settingDefaults": {
-        "breadcrumbs": true
+        "breadcrumbs": true,
+        UIFeature.registration: false
     },
     "jitsi": {
         "preferredDomain": "meet.jit.si"
