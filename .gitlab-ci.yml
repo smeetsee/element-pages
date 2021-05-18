@@ -5,7 +5,9 @@ pages:
     - wget https://github.com/vector-im/element-web/releases/download/v1.7.28/element-v1.7.28.tar.gz
     - tar zvfx element-v1.7.28.tar.gz
     - mv element-v1.7.28 public
-    - cp config.json public
+    - mv config.json public
+    - mv background.jpeg public
+    - mv default.svg public
   artifacts:
     paths:
       - public
