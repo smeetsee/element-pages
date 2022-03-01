@@ -4,7 +4,7 @@ pages:
   variables:
     VERSION: v1.10.6
   script:
-    - wget https://github.com/vector-im/element-web/releases/download/v${VERSION}/element-${VERSION}.tar.gz
+    - wget https://github.com/vector-im/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
     - tar zvfx element-${VERSION}.tar.gz
     - mv element-${VERSION} public
     - mv config.json public
