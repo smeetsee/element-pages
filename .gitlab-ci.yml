@@ -2,7 +2,7 @@ pages:
   image: alpine:latest
   stage: deploy
   variables:
-    VERSION: v1.10.6
+    VERSION: v1.11.0
   script:
     - wget https://github.com/vector-im/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
     - tar zvfx element-${VERSION}.tar.gz
