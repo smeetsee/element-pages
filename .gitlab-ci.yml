@@ -1,9 +1,11 @@
 pages:
   image: alpine:latest
   stage: deploy
-  variables:
-    VERSION: v1.11.0
+  # Moved into version.env
+  # variables:
+  #   VERSION: v1.11.0
   script:
+    - source version.env
     - wget https://github.com/vector-im/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
     - tar zvfx element-${VERSION}.tar.gz
     - mv element-${VERSION} public
