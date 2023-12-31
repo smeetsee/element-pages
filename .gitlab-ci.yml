@@ -6,7 +6,7 @@ pages:
   #   VERSION: v1.11.0
   script:
     - source version.env
-    - wget https://github.com/vector-im/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
+    - wget https://github.com/element-hq/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
     - tar zvfx element-${VERSION}.tar.gz
     - mv element-${VERSION} public
     - mv config.json public
