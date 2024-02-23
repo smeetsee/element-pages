@@ -33,7 +33,9 @@
         "feature_custom_status": "labs",
         "feature_custom_tags": "labs",
         "feature_state_counters": "labs",
-        "feature_irc_ui": "labs"
+        "feature_irc_ui": "labs",
+        "feature_latex_maths": true,
+        "feature_thread": true
     },
     "default_federate": true,
     "default_theme": "light",
