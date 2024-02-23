@@ -25,8 +25,8 @@
         "https://scalar-staging.riot.im/scalar/api"
     ],
     "bug_report_endpoint_url": "https://riot.im/bugreports/submit",
-    "defaultCountryCode": "NL",
-    "showLabsSettings": false,
+    "default_country_code": "NL",
+    "show_labs_settings": false,
     "features": {
         "feature_font_scaling": "labs",
         "feature_pinning": "labs",
@@ -37,7 +37,7 @@
     },
     "default_federate": true,
     "default_theme": "light",
-    "roomDirectory": {
+    "room_directory": {
         "servers": [
             "smeets.ee"
         ]
@@ -47,15 +47,14 @@
       "authHeaderLogoUrl": "/default.svg"
     },
     "piwik": false,
-    "welcomeUserId": "@riot-bot:matrix.org",
     "enable_presence_by_hs_url": {
         "https://matrix.smeets.ee": true
     },
-    "settingDefaults": {
+    "setting_defaults": {
         "breadcrumbs": true,
         "UIFeature.registration": false
     },
     "jitsi": {
-        "preferredDomain": "meet.jit.si"
+        "preferred_domain": "meet.jit.si"
     }
 }
