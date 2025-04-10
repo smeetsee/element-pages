@@ -1,13 +1,10 @@
 pages:
   image: alpine:latest
   stage: deploy
-  # Moved into version.env
-  # variables:
-  #   VERSION: v1.11.0
   script:
     - source version.env
     - wget https://github.com/element-hq/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
-    - tar zvfx element-${VERSION}.tar.gz
+    - tar zfx element-${VERSION}.tar.gz
     - mv element-${VERSION} public
     - mv config.json public
     - mv background.jpeg public
