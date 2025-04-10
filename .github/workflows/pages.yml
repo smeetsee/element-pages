@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      id-token: write
+      pages: write
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Install dependencies (curl, wget, tar)
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y curl wget tar
+
+      # Fetch the latest version of Element Web
+      - name: Fetch latest Element Web version
+        run: |
+          VERSION=$(curl -s https://api.github.com/repos/element-hq/element-web/releases/latest | grep tag_name | cut -d '"' -f4)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      # Download and extract the release
+      - name: Download and extract Element Web
+        run: |
+          wget https://github.com/element-hq/element-web/releases/download/${VERSION}/element-${VERSION}.tar.gz
+          tar zfx element-${VERSION}.tar.gz
+          mv element-${VERSION} public
+
+      # Move additional files to the public directory
+      - name: Move additional files
+        run: |
+          mv config.json public
+          mv background.jpeg public
+          mv default.svg public
+
+      # Upload the public directory as an artifact
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+      
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+    
+    #   # Deploy to Cloudflare Pages
+    #   - name: Deploy to Cloudflare Pages
+    #     uses: cloudflare/pages-action@v1
+    #     with:
+    #       apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    #       accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    #       projectName: communicate
+    #       directory: public
