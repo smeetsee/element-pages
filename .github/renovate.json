@@ -7,7 +7,7 @@
         "/^version\\.env$/"
       ],
       "matchStrings": [
-        "VERSION=(?<currentValue>.*?)\\s"
+        "VERSION=(?<currentValue>.*?)"
       ],
       "depNameTemplate": "element-hq/element-web",
       "datasourceTemplate": "github-releases",
